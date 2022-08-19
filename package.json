@@ -10,10 +10,16 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:chris_test"
+    "onCommand:chris_test",
+    "onCommand:setLocations"
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration": {
+      "properties": {
+        "lessvarChris.locations": {}
+      }
+    },
     "commands": [
       {
         "command": "chris_test",
@@ -32,14 +38,13 @@
           "group": "navigation"
         }
       ],
-       "explorer/context": [
-        {       
-
+      "explorer/context": [
+        {
           "when": "resourceExtname == .less",
-            "command": "setLocations",
-            "group": "navigation"
+          "command": "setLocations",
+          "group": "navigation"
         }
-    ]
+      ]
     }
   },
   "scripts": {
