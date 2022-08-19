@@ -69,7 +69,7 @@ export default (context: vscode.ExtensionContext)=> {
   // 注册代码建议提示，只有当按下“@”时才触发
   context.subscriptions.push(
     vscode.languages.registerCompletionItemProvider(
-     ['vue','less'],
+   'less',
       {
         provideCompletionItems,
         resolveCompletionItem,
