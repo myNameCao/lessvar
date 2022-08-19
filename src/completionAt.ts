@@ -7,6 +7,7 @@ function provideCompletionItems(
   position: vscode.Position
 ) {
   // 光标位置不是@不处理
+
   if (document.lineAt(position).text[position.character - 1] !== '@') {
     return
   }
@@ -49,8 +50,6 @@ function provideCompletionItems(
       })
     }
   }
-  require('./setLocations')(context) // 设置路径的webview
-
   return total.length
     ? total
     : [
@@ -71,6 +70,17 @@ export default (context: vscode.ExtensionContext) => {
   context.subscriptions.push(
     vscode.languages.registerCompletionItemProvider(
       'less',
+      {
+        provideCompletionItems,
+        resolveCompletionItem
+      },
+      '@'
+    )
+  )
+
+  context.subscriptions.push(
+    vscode.languages.registerCompletionItemProvider(
+      'vue',
       {
         provideCompletionItems,
         resolveCompletionItem

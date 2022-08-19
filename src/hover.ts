@@ -27,6 +27,7 @@ function provideHover(
   // 检测路径配置是否正确
   const error = []
   for (let i = 0; i < allFile.length; i++) {
+    console.log(allFile[i])
     if (allFile[i].slice(-4) !== 'less' && allFile[i].slice(-2) !== 'js') {
       error.push(`只支持less或js文件,${allFile[i]}`)
     }
@@ -61,6 +62,12 @@ export default (context: vscode.ExtensionContext) => {
   // 注册鼠标悬停提示
   context.subscriptions.push(
     vscode.languages.registerHoverProvider('less', {
+      provideHover
+    })
+  )
+
+  context.subscriptions.push(
+    vscode.languages.registerHoverProvider('vue', {
       provideHover
     })
   )
