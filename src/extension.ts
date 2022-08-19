@@ -2,13 +2,16 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+import  completionAt from './completionAt';
+import  setLocations from './setLocations';
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 
-	require("./completionAt")(context); // 自动补全@
+	completionAt(context); // 自动补全@
 
-	require("./setLocations")(context); // 设置路径的webview
+	setLocations(context); // 设置路径的webview
 
 	
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
@@ -18,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('lessvar-chris', () => {
+	let disposable = vscode.commands.registerCommand('chris_test', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Hello World from lessVar_chris!');

@@ -129,7 +129,7 @@ function registerCommand(context: vscode.ExtensionContext) {
   };
 }
 
-module.exports = function (context: vscode.ExtensionContext) {
+export default   (context: vscode.ExtensionContext)=> {
 
 console.log(111)
   context.subscriptions.push(

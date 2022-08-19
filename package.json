@@ -10,13 +10,13 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:lessvar-chris"
+    "onCommand:chris_test"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "lessvar-chris",
+        "command": "chris_test",
         "title": "Hello World"
       },
       {

@@ -65,8 +65,7 @@ function provideCompletionItems(
 function resolveCompletionItem() {
   return null;
 }
-
-module.exports = function (context: vscode.ExtensionContext) {
+export default (context: vscode.ExtensionContext)=> {
   // 注册代码建议提示，只有当按下“@”时才触发
   context.subscriptions.push(
     vscode.languages.registerCompletionItemProvider(
