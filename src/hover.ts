@@ -11,7 +11,6 @@ function provideHover(
 
   // 只查询@开头
   if (!word || word[0] !== '@') {
-    return
   }
 
   // 文件路径
